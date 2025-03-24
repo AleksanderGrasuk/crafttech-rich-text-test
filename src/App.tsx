@@ -2,9 +2,10 @@ import { useRef, useState } from "react";
 import "./App.css";
 import Canvas from "./components/canvas/Canvas";
 import Control from "./components/control/Control";
+import { ToolType } from "./types/types";
 
 function App() {
-  const [tool, setTool] = useState("cursor");
+  const [tool, setTool] = useState<ToolType>("cursor");
   const stageRef = useRef(null);
   return (
     <>
@@ -14,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default App ;

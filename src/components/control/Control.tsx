@@ -1,6 +1,8 @@
-const Control = ({ tool, setTool }: any) => {
-  const handleOnChange = (e: any) => {
-    setTool(e.target.value);
+import { ToolType } from "../../types/types";
+
+const Control = ({ tool, setTool }: { tool: ToolType; setTool: React.Dispatch<React.SetStateAction<ToolType>>}) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTool(e.target.value as ToolType);
   };
 
   return (

@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { Group, Rect } from "react-konva";
 import { Html } from "react-konva-utils";
 import HtmlText from "../htmlText/HtmlText";
-
-const Shape = (props: any) => {
+import {IFigure} from "../../types/types";
+const Shape = (props: IFigure) => {
   const { x, y, width, height, tool, html, id, text } = props;
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState(text);

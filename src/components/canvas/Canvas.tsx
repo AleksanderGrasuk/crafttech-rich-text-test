@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useState, RefObject } from "react";
 import { Layer, Stage } from "react-konva";
+import Konva from "konva";
 import Shape from "../shape/Shape";
+import { ToolType, IFigure } from "../../types/types";
 
-const Canvas = ({ tool, stageRef }: any) => {
-  const [figures, setFigures] = useState<any>([]);
+interface ICanvasProps {
+  tool:ToolType;
+  stageRef: RefObject<Konva.Stage>;
+}
 
-  const handleOnClick = (e: any) => {
+const Canvas = ({ tool, stageRef }: ICanvasProps) => {
+  const [figures, setFigures] = useState<IFigure[]>([]);
+
+  const handleOnClick = (e:Konva.KonvaEventObject<MouseEvent>) => {
     if (tool === "cursor") return;
     const stage = e.target.getStage();
+    if (!stage) return;
     const stageOffset = stage.absolutePosition();
     const point = stage.getPointerPosition();
-    setFigures((prev: any) => [
+    if (!point) return;
+    setFigures((prev: IFigure[]) => [
       ...prev,
       {
         id: Date.now().toString(36),
         width: 100,
-        height: 100,
+        height: 100, 
         type: "rect",
         x: point.x - stageOffset.x,
         y: point.y - stageOffset.y,
@@ -34,7 +43,7 @@ const Canvas = ({ tool, stageRef }: any) => {
       ref={stageRef}
     >
       <Layer>
-        {figures.map((figure: any, i: number) => {
+        {figures.map((figure: IFigure, i: number) => {
           return <Shape key={i} {...figure} stageRef={stageRef} tool={tool} />;
         })}
       </Layer>
