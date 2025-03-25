@@ -1,13 +1,9 @@
-import { useState, RefObject } from "react";
+import { useState } from "react";
 import { Layer, Stage } from "react-konva";
 import Konva from "konva";
 import Shape from "../shape/Shape";
-import { ToolType, IFigure } from "../../types/types";
+import {IFigure, ICanvasProps } from "../../types/types";
 
-interface ICanvasProps {
-  tool:ToolType;
-  stageRef: RefObject<Konva.Stage>;
-}
 
 const Canvas = ({ tool, stageRef }: ICanvasProps) => {
   const [figures, setFigures] = useState<IFigure[]>([]);

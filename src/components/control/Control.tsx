@@ -1,4 +1,5 @@
 import { ToolType } from "../../types/types";
+import "./Control.scss"
 
 const Control = ({ tool, setTool }: { tool: ToolType; setTool: React.Dispatch<React.SetStateAction<ToolType>>}) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -6,9 +7,10 @@ const Control = ({ tool, setTool }: { tool: ToolType; setTool: React.Dispatch<Re
   };
 
   return (
-    <div style={{ position: "absolute", top: 0 }}>
-      <div>
+    <div className="control">
+      <div className="control__item">
         <input
+          className="control__item-radio"
           type="radio"
           id="cursor"
           name="control"
@@ -16,11 +18,12 @@ const Control = ({ tool, setTool }: { tool: ToolType; setTool: React.Dispatch<Re
           checked={tool === "cursor"}
           onChange={handleOnChange}
         />
-        <label htmlFor="cursor">Взаимодействие</label>
+        <label className="control__item-label" htmlFor="cursor">Взаимодействие</label>
       </div>
 
-      <div>
+      <div className="control__item">
         <input
+        className="control__item-radio"
           type="radio"
           id="shape"
           name="control"
@@ -28,7 +31,7 @@ const Control = ({ tool, setTool }: { tool: ToolType; setTool: React.Dispatch<Re
           checked={tool === "shape"}
           onChange={handleOnChange}
         />
-        <label htmlFor="shape">Добавление</label>
+        <label className="control__item-label" htmlFor="shape">Добавление</label>
       </div>
     </div>
   );

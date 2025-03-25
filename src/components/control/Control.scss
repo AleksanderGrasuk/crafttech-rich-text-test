@@ -1,0 +1,10 @@
+.control {
+    display: flex;
+    flex-direction: row;
+    position: absolute; 
+    top: 0; 
+    right: 50%;
+    &__item :not(:last-child) {
+        margin-right: 10px;
+    }
+}
