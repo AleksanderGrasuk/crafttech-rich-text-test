@@ -8,7 +8,7 @@ const Control = ({ tool, setTool }: { tool: ToolType; setTool: React.Dispatch<Re
 
   return (
     <div className="control">
-      <div className="control__item">
+      <div className="control__item item-first">
         <input
           className="control__item-radio"
           type="radio"
@@ -21,7 +21,7 @@ const Control = ({ tool, setTool }: { tool: ToolType; setTool: React.Dispatch<Re
         <label className="control__item-label" htmlFor="cursor">Взаимодействие</label>
       </div>
 
-      <div className="control__item">
+      <div className="control__item item-second">
         <input
         className="control__item-radio"
           type="radio"

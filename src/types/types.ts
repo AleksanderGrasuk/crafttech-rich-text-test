@@ -22,3 +22,8 @@ export interface IHtmlTextProps {
   html: string;
   id: string;
 }
+
+export interface IShapeTextAreaProps {
+  x: number;
+  y: number;
+}

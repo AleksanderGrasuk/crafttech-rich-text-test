@@ -1,0 +1,11 @@
+.htmltext {
+        position: absolute;
+        top: #{attr(data-y)};
+        left: #{attr(data-x)};
+        font-size: 20px;
+        border: none;
+        outline: none;
+        resize: none;
+        background: transparent;
+      
+}
