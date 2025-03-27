@@ -12,15 +12,19 @@ export interface IFigure {
   text: string;
   tool?: ToolType;
   stageRef?: RefObject<Konva.Stage>;
+  onDragStart?: () => void;
+  onDragEnd?: () => void;
+  onDragMove?: () => void;
 }
 export interface ICanvasProps {
-  tool:ToolType;
+  tool: ToolType;
   stageRef: RefObject<Konva.Stage>;
 }
 
 export interface IHtmlTextProps {
   html: string;
   id: string;
+  className?: string;
 }
 
 export interface IShapeTextAreaProps {

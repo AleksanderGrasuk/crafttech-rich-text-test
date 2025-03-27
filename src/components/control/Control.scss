@@ -1,47 +1,45 @@
 .control {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  top: 5px;
+  right: 50%;
+  &__item {
+    float: left;
     display: inline-block;
-	overflow: hidden;
-    position: absolute; 
-    top: 5px; 
-    right: 50%;
-    &__item  {
-        float: left;
-        display: inline-block;
 
-        input[type=radio] {
-            display: none;
-          }
-      
-        label {
-            display: inline-block;
-            padding: 0px 15px;
-            line-height: 34px;
-            border: 1px solid #999;
-            border-right: none;
-            cursor: pointer;
-            user-select: none;
-          }
+    input[type="radio"] {
+      display: none;
     }
-    .item-first {
-        label {
-          border-radius: 6px 0 0 6px;
-        }
-    
-        input[type=radio]:checked + label {
-          background: #ffc5c5;
-        }
-      }
-    
-      .item-second {
-        label {
-          border-radius: 0 6px 6px 0;
-          border-right: 1px solid #999;
-        }
-    
-        input[type=radio]:checked + label {
-          background: #bbffbb;
-        }
-      }
+
+    label {
+      display: inline-block;
+      padding: 0px 15px;
+      line-height: 34px;
+      border: 1px solid #999;
+      border-right: none;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+  .item-first {
+    label {
+      border-radius: 6px 0 0 6px;
+    }
+
+    input[type="radio"]:checked + label {
+      background: #ffc5c5;
+    }
+  }
+
+  .item-second {
+    label {
+      border-radius: 0 6px 6px 0;
+      border-right: 1px solid #999;
+    }
+
+    input[type="radio"]:checked + label {
+      background: #bbffbb;
+    }
+  }
 }
-
-
