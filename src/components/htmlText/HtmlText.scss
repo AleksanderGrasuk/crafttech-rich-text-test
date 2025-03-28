@@ -1,0 +1,41 @@
+.htmltext-container {
+  position: absolute;
+  overflow: visible; /* Изменяем на visible, чтобы тулбар не обрезался */
+  background: transparent;
+  z-index: 10; /* Убедитесь, что элемент находится выше других */
+  pointer-events: none; /* Отключаем взаимодействие в статическом режиме */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.htmltext-container.editing {
+  pointer-events: auto; /* Включаем взаимодействие в режиме редактирования */
+  overflow: visible; /* Убедитесь, что тулбар не обрезается */
+}
+
+.htmltext-container .ql-container {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.htmltext-container .ql-editor {
+  padding: 10px;
+  min-height: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.htmltext-container .ql-toolbar {
+  position: absolute;
+  top: -50px; /* Поднимаем тулбар над текстовым полем */
+  left: 0;
+  z-index: 20; /* Убедитесь, что тулбар выше других элементов */
+  background: #524f4f;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем тень для видимости */
+}
