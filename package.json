@@ -20,7 +20,8 @@
     "react-konva-utils": "^1.0.7",
     "react-quill": "^2.0.0",
     "react-quill-new": "^3.4.6",
-    "sass": "^1.86.0"
+    "sass": "^1.86.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

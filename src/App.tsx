@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import Canvas from "./components/canvas/Canvas";
 import Control from "./components/control/Control";
 import { ToolType } from "./types/types";
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App ;
+export default App;

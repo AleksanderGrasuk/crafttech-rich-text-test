@@ -1,0 +1,36 @@
+.canvas {
+  background-color: rgb(249, 249, 249);
+  opacity: 1;
+  touch-action: none;
+  background-image: repeating-linear-gradient(
+      90deg,
+      rgba(226, 226, 226, 0.5) 0px,
+      rgba(226, 226, 226, 0.5) 2px,
+      transparent 2px,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(226, 226, 226, 0.5) 0px,
+      rgba(226, 226, 226, 0.5) 2px,
+      transparent 2px,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(226, 226, 226, 0.5) 0px,
+      rgba(226, 226, 226, 0.5) 1px,
+      transparent 2px,
+      transparent 2%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(226, 226, 226, 0.5) 0px,
+      rgba(226, 226, 226, 0.5) 1px,
+      transparent 2px,
+      transparent 2%
+    );
+  background-position: -223px -111px;
+  background-size: 1000px 1000px;
+  overflow: hidden;
+}

@@ -1,34 +1,81 @@
 .control {
   display: inline-block;
-  overflow: hidden;
+
   position: absolute;
   top: 5px;
-  right: 50%;
+  right: 45%;
+
   &__item {
-    float: left;
     display: inline-block;
+    background-color: white;
 
     input[type="radio"] {
       display: none;
     }
 
     label {
-      display: inline-block;
-      padding: 0px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
       line-height: 34px;
       border: 1px solid #999;
       border-right: none;
       cursor: pointer;
       user-select: none;
+      transition: background 0.3s, transform 0.2s, border-radius 0.2s;
+
+      &:hover {
+        background: #f0f0f0;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .hand-icon,
+    .plus-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+        margin: auto;
+      }
+
+      .hand-icon_color,
+      .plus-icon_color {
+        fill: #000;
+        transition: fill 0.3s;
+
+        label:hover & {
+          fill: #555;
+        }
+      }
     }
   }
+
   .item-first {
     label {
       border-radius: 6px 0 0 6px;
+
+      &:hover {
+        border-radius: 6px 0 0 6px;
+      }
     }
 
     input[type="radio"]:checked + label {
       background: #ffc5c5;
+      border-color: #ff9999;
+      border-radius: 6px 0 0 6px;
     }
   }
 
@@ -36,10 +83,16 @@
     label {
       border-radius: 0 6px 6px 0;
       border-right: 1px solid #999;
+
+      &:hover {
+        border-radius: 0 6px 6px 0;
+      }
     }
 
     input[type="radio"]:checked + label {
       background: #bbffbb;
+      border-color: #99cc99;
+      border-radius: 0 6px 6px 0;
     }
   }
 }

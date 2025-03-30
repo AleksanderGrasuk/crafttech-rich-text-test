@@ -1,41 +1,46 @@
 .htmltext-container {
-  position: absolute;
-  overflow: visible; /* Изменяем на visible, чтобы тулбар не обрезался */
-  background: transparent;
-  z-index: 10; /* Убедитесь, что элемент находится выше других */
-  pointer-events: none; /* Отключаем взаимодействие в статическом режиме */
+  position: relative;
+  overflow: visible;
+  z-index: 10;
+  pointer-events: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 
-.htmltext-container.editing {
-  pointer-events: auto; /* Включаем взаимодействие в режиме редактирования */
-  overflow: visible; /* Убедитесь, что тулбар не обрезается */
-}
+  &.editing {
+    pointer-events: auto;
+    overflow: visible;
+  }
 
-.htmltext-container .ql-container {
-  height: 100%;
-  width: 100%;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
+  &.editing .ql-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    background: #353434;
+    border: 3px solid #312f2f;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    .ql-formats {
+      margin: 2px 0;
+    }
+  }
 
-.htmltext-container .ql-editor {
-  padding: 10px;
-  min-height: 100%;
-  min-width: 100%;
-  box-sizing: border-box;
-}
+  &.editing .ql-container {
+    height: auto; // Убираем фиксированную высоту
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
-.htmltext-container .ql-toolbar {
-  position: absolute;
-  top: -50px; /* Поднимаем тулбар над текстовым полем */
-  left: 0;
-  z-index: 20; /* Убедитесь, что тулбар выше других элементов */
-  background: #524f4f;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем тень для видимости */
+  .ql-tooltip {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+  }
 }
