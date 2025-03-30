@@ -1,0 +1,46 @@
+.htmltext-container {
+  position: relative;
+  overflow: visible;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  &.editing {
+    pointer-events: auto;
+    overflow: visible;
+  }
+
+  &.editing .ql-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    background: #353434;
+    border: 3px solid #312f2f;
+    border-radius: 3px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    .ql-formats {
+      margin: 2px 0;
+    }
+  }
+
+  &.editing .ql-container {
+    height: auto; // Убираем фиксированную высоту
+    width: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .ql-tooltip {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+  }
+}
